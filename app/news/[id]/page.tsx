@@ -1,7 +1,6 @@
 import { getNewsPost, getNewsPosts, type NewsPost } from '@/lib/microcms';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import AnimatedGradientBackground from '@/components/shared/AnimatedGradientBackground';
 
@@ -38,11 +37,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     
     return {
       title: `${post.title} | RECOR - CREATE VALUE WITH EMPATHY`,
-      description: post.excerpt || post.title,
+      description: post.title,
       openGraph: {
         title: post.title,
-        description: post.excerpt || post.title,
-        images: post.thumbnail ? [post.thumbnail.url] : [],
+        description: post.title,
       },
     };
   } catch (error) {
@@ -89,9 +87,6 @@ export default async function NewsPostPage({ params }: Props) {
               {/* 記事ヘッダー */}
               <header className="mb-8">
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
-                    {post.category.name}
-                  </span>
                   <time className="text-sm text-gray-500">
                     {new Date(post.publishedAt).toLocaleDateString('ja-JP')}
                   </time>
@@ -100,17 +95,6 @@ export default async function NewsPostPage({ params }: Props) {
                 <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
                   {post.title}
                 </h1>
-                
-                {post.thumbnail && (
-                  <div className="aspect-video relative rounded-lg overflow-hidden mb-6">
-                    <Image
-                      src={post.thumbnail.url}
-                      alt={post.thumbnail.alt || post.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                )}
               </header>
 
               {/* 記事本文 */}
@@ -149,4 +133,4 @@ export default async function NewsPostPage({ params }: Props) {
       </div>
     </>
   );
-} 
+}
