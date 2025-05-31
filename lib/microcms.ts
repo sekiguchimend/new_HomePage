@@ -33,43 +33,25 @@ export type NewsPost = {
   id: string;
   title: string;
   content: string;
-  excerpt?: string;
-  thumbnail?: {
-    url: string;
-    alt?: string;
-  };
-  category: {
-    id: string;
-    name: string;
-  };
   publishedAt: string;
   createdAt: string;
   updatedAt: string;
 };
 
-// 実績の型定義
+// 実績の型定義（実際のスキーマに合わせて修正）
 export type Result = {
   id: string;
-  client: string;
   title: string;
-  description: string;
-  content?: string;
-  thumbnail?: {
+  content: string;
+  eyecatch?: {
     url: string;
-    alt?: string;
+    height: number;
+    width: number;
   };
-  images?: Array<{
-    url: string;
-    alt?: string;
-  }>;
-  category: {
+  category?: {
     id: string;
     name: string;
   };
-  tags?: Array<{
-    id: string;
-    name: string;
-  }>;
   publishedAt: string;
   createdAt: string;
   updatedAt: string;
@@ -169,26 +151,4 @@ export const getResult = async (id: string, queries?: MicroCMSQueries) => {
   });
 };
 
-// カテゴリーを取得する関数
-export const getCategories = async (queries?: MicroCMSQueries) => {
-  if (!client) {
-    throw new Error('microCMS client is not initialized. Please check MICROCMS_SERVICE_DOMAIN and MICROCMS_API_KEY environment variables.');
-  }
-  
-  return await client.getList<Category>({
-    endpoint: 'categories',
-    queries,
-  });
-};
 
-// タグを取得する関数
-export const getTags = async (queries?: MicroCMSQueries) => {
-  if (!client) {
-    throw new Error('microCMS client is not initialized. Please check MICROCMS_SERVICE_DOMAIN and MICROCMS_API_KEY environment variables.');
-  }
-  
-  return await client.getList<Tag>({
-    endpoint: 'tags',
-    queries,
-  });
-}; 

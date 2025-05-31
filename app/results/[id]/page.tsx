@@ -17,10 +17,7 @@ export const revalidate = 3600;
 // 動的ルートの事前生成
 export async function generateStaticParams() {
   try {
-    const response = await getResults({
-      limit: 100,
-      fields: ['id'],
-    });
+    const response = await getResults();
     
     return response.contents.map((result) => ({
       id: result.id,
@@ -38,11 +35,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     
     return {
       title: `${result.title} | 実績 | RECOR - CREATE VALUE WITH EMPATHY`,
-      description: result.description,
+      description: result.content.replace(/<[^>]*>/g, '').substring(0, 160),
       openGraph: {
         title: result.title,
-        description: result.description,
-        images: result.thumbnail ? [result.thumbnail.url] : [],
+        description: result.content.replace(/<[^>]*>/g, '').substring(0, 160),
+        images: result.eyecatch ? [result.eyecatch.url] : [],
       },
     };
   } catch (error) {
@@ -90,74 +87,44 @@ export default async function ResultDetailPage({ params }: Props) {
               <header className="mb-8">
                 <div className="flex items-center gap-2 mb-4">
                   <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
-                    {result.category.name}
+                    実績
                   </span>
                   <time className="text-sm text-gray-500">
                     {new Date(result.publishedAt).toLocaleDateString('ja-JP')}
                   </time>
                 </div>
                 
-                <p className="text-lg text-gray-600 mb-2">{result.client}</p>
-                
                 <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
                   {result.title}
                 </h1>
                 
-                <p className="text-xl text-gray-700 mb-6 leading-relaxed">
-                  {result.description}
-                </p>
-                
-                {result.thumbnail && (
+                {/* 画像の条件付き表示 */}
+                {result.eyecatch ? (
                   <div className="aspect-video relative rounded-lg overflow-hidden mb-6">
                     <Image
-                      src={result.thumbnail.url}
-                      alt={result.thumbnail.alt || result.title}
+                      src={result.eyecatch.url}
+                      alt={result.title}
                       fill
                       className="object-cover"
                     />
                   </div>
-                )}
-                
-                {result.tags && result.tags.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {result.tags.map((tag) => (
-                      <span
-                        key={tag.id}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
-                      >
-                        #{tag.name}
-                      </span>
-                    ))}
+                ) : (
+                  <div className="aspect-video relative rounded-lg overflow-hidden mb-6 bg-gray-200 flex items-center justify-center">
+                    <div className="text-center text-gray-500">
+                      <svg className="w-16 h-16 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      <p>画像準備中</p>
+                    </div>
                   </div>
                 )}
               </header>
 
               {/* 詳細内容 */}
-              {result.content && (
-                <div 
-                  className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-h2:text-2xl prose-h3:text-xl prose-p:text-gray-700 prose-strong:text-gray-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-lg mb-8"
-                  dangerouslySetInnerHTML={{ __html: result.content }}
-                />
-              )}
-
-              {/* 追加画像 */}
-              {result.images && result.images.length > 0 && (
-                <div className="mb-8">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4">関連画像</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {result.images.map((image, index) => (
-                      <div key={index} className="aspect-video relative rounded-lg overflow-hidden">
-                        <Image
-                          src={image.url}
-                          alt={image.alt || `関連画像 ${index + 1}`}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
+              <div 
+                className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-h2:text-2xl prose-h3:text-xl prose-p:text-gray-700 prose-strong:text-gray-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-lg mb-8"
+                dangerouslySetInnerHTML={{ __html: result.content }}
+              />
 
               {/* フッター */}
               <footer className="mt-12 pt-6 border-t border-gray-200">
