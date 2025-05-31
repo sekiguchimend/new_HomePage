@@ -1,0 +1,32 @@
+{
+  "name": "Queue株式会社 - 世界を熱狂させる、AIプロダクトをつくる。",
+  "short_name": "Queue",
+  "description": "プロンプトの経済圏をつくる。プロンプトマーケット「Prompty」、社内AIチャット「Workmate」、そして圧倒的スピードの受託AI開発。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "ja",
+  "categories": ["business", "productivity", "technology"],
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+} 
