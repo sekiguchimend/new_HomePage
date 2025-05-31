@@ -1,0 +1,57 @@
+Next.js App Router で “メール受信 → Webhook → API Route” を実装するチェックリスト
+=================================================================
+
+**状況：**
+- Next.js 14 以上（app router）
+- メールサービス：Mailgun
+- デプロイ：Vercel
+- ゴール：受信メールを /api/mail-webhook で処理
+
+------------------------------------------------------------
+1. 前提準備
+------------------------------------------------------------
+- [ ] ドメインを取得している
+- [ ] Mailgun › Receiving › Domains › “Add Domain” でドメインを追加
+- [ ] DNS に以下を設定  
+      - [ ] MX   10 mxa.mailgun.org  
+      - [ ] MX   10 mxb.mailgun.org
+- [ ] ドメインが“Verified”になったことを確認
+
+------------------------------------------------------------
+2. Next.js プロジェクト設定
+------------------------------------------------------------
+- [ ] `npm install mailparser raw-body` を実行
+- [ ] `.env.local` に MAILGUN_SIGNING_KEY を追加
+- [ ] Vercel の環境変数にも同キーを設定
+
+------------------------------------------------------------
+3. API Route 実装 (app/api/mail-webhook/route.ts)
+------------------------------------------------------------
+- [ ] `crypto`, `raw-body`, `mailparser` を import
+- [ ] 署名検証関数 `verifySignature` を実装
+- [ ] multipart/form-data を `formData()` で解析
+- [ ] `body-mime` を `simpleParser` で解析
+- [ ] 受信メールデータを console.log または DB 保存
+- [ ] 200 OK を返す
+
+------------------------------------------------------------
+4. Mailgun Webhook を設定
+------------------------------------------------------------
+- [ ] Receiving › Routes › “Create Route” を開く
+- [ ] Expression: `match_recipient(".*@yourdomain.com")`
+- [ ] Action: `forward("https://your-vercel-app.vercel.app/api/mail-webhook")`
+- [ ] (任意) “Store and notify” を有効化
+
+------------------------------------------------------------
+5. 動作確認
+------------------------------------------------------------
+- [ ] テストメールを送信 (例: Gmail → yourname@yourdomain.com)
+- [ ] Vercel Logs で from / subject / text を確認
+- [ ] 必要に応じて署名エラーや 404 をデバッグ
+
+------------------------------------------------------------
+6. よくあるハマりポイント対策
+------------------------------------------------------------
+- [ ] SIGNING_KEY が正しいか確認
+- [ ] デプロイ URL の https / パスが正しいか確認
+- [ ] 10MB 超えメールは raw-body limit を調整
