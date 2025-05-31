@@ -11,8 +11,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'RECOR - CREATE VALUE WITH EMPATHY',
-  description: 'まじめな想いを、まじめに届ける。株式会社RECORのコーポレートサイト',
+  title: 'Queue株式会社 - 世界を熱狂させる、AIプロダクトをつくる。',
+  description: 'プロンプトマーケット「Prompty」、社内AIチャット「Workmate」、そして圧倒的スピードの受託AI開発。Queueは、ビジネスを進化させるAIテクノロジーの力をすべての企業へ届けます。',
 };
 
 export default function RootLayout({

@@ -4,8 +4,8 @@ import Link from 'next/link';
 import AnimatedGradientBackground from '@/components/shared/AnimatedGradientBackground';
 
 export const metadata: Metadata = {
-  title: '実績 | RECOR - CREATE VALUE WITH EMPATHY',
-  description: 'RECORの実績ページです。これまでの取り組み事例をご紹介します。',
+  title: '実績 | Queue株式会社 - 世界を熱狂させる、AIプロダクトをつくる。',
+  description: 'Queue株式会社の実績ページです。これまでのAI開発事例やプロダクト導入実績をご紹介します。',
 };
 
 // ISRで1時間ごとに再生成

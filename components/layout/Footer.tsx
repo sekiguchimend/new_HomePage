@@ -8,10 +8,10 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between">
           <div className="mb-8 md:mb-0">
             <Link href="/" className="text-black text-2xl font-bold">
-              RECOR
+              Queue
             </Link>
             <p className="mt-2 text-sm text-gray-600">
-              © {new Date().getFullYear()} 株式会社RECOR All Rights Reserved.
+              © {new Date().getFullYear()} Queue株式会社 All Rights Reserved.
             </p>
           </div>
           

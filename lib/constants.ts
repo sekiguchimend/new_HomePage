@@ -1,6 +1,6 @@
 export const NAVIGATION_ITEMS = [
-  { label: "RECORとは", href: "/about" },
-  { label: "事業内容", href: "/services" },
+  { label: "Queueとは", href: "/about" },
+  { label: "サービス", href: "/services" },
   { label: "実績", href: "/results" },
   { label: "ブログ", href: "/blog" },
   { label: "よくある質問", href: "/faq" },
@@ -10,103 +10,99 @@ export const NAVIGATION_ITEMS = [
 
 export const VALUES = [
   {
-    id: "be-empathetic",
-    titleEn: "BE EMPATHETIC",
-    titleJa: "思いをめぐらせる",
-    description1: "相手の気持ちに寄り添い、深く理解することを大切にする。",
-    description2: "表面的な理解で満足せず、本質を見出す。",
+    id: "ai-innovation",
+    titleEn: "AI INNOVATION",
+    titleJa: "AIで世界を変える",
+    description1: "生成AIとオートメーションを軸とした革新的なソリューションを提供する。",
+    description2: "最新のテクノロジーで、ビジネスの進化を加速させる。",
   },
   {
-    id: "be-authentic",
-    titleEn: "BE AUTHENTIC",
-    titleJa: "芯を持って生きる",
-    description1: "努力を重ね続け、諦めない。失敗を恐れず、常に挑戦する姿勢を持ち続ける。",
-    description2: "",
+    id: "prompt-economy",
+    titleEn: "PROMPT ECONOMY",
+    titleJa: "プロンプトの経済圏をつくる",
+    description1: "すべての人がAIの力を活用できる環境を構築する。",
+    description2: "知識とノウハウを共有し、価値を循環させる。",
   },
   {
-    id: "stay-resilient",
-    titleEn: "STAY RESILIENT",
-    titleJa: "しなやかに前進する",
-    description1: "自分らしさを誇りに、妥協せず、源として歩む。",
-    description2: "優しさは決して弱さではないと信じる。",
+    id: "rapid-development",
+    titleEn: "RAPID DEVELOPMENT",
+    titleJa: "圧倒的スピード",
+    description1: "最短1週間でAIソリューションを導入可能にする。",
+    description2: "スモールスタートから本格運用まで、柔軟に対応する。",
   },
   {
-    id: "create-value",
-    titleEn: "CREATE VALUE",
-    titleJa: "本質的な価値を届ける",
-    description1: "表層的な解決に満足せず、本当に価値のあるものを見出し、形にする。",
-    description2: "",
+    id: "business-evolution",
+    titleEn: "BUSINESS EVOLUTION",
+    titleJa: "ビジネスを進化させる",
+    description1: "AIテクノロジーの力で、すべての企業の成長を支援する。",
+    description2: "業務効率化から新しい価値創造まで、包括的にサポートする。",
   },
 ];
 
 export const BUSINESS_SERVICES = [
   {
     id: "01",
-    title: "ブランディング戦略設計",
-    description: "1対1インタビューやユーザー調査に基づき、ブランドの核となる世界観・価値観を明確にします。",
+    title: "Workmate",
+    description: "社内の「わからない」をゼロにする、AIチャットボット。SlackやWebに即導入。マニュアル・PDF・議事録など、社内の情報を学習し、あらゆる質問に24時間対応。",
   },
   {
     id: "02",
-    title: "ブランディングデザイン",
-    description: "「刺さる言葉」と「買いたくなる設計」でCVに直結する仕組みを設計します。",
+    title: "Workmate-Script",
+    description: "一行でWebサイトに埋め込める、AIチャットウィジェット。スクリプトタグを貼るだけで、あなたのサイトが「話せるように」なる。",
   },
   {
     id: "03",
-    title: "マーケティング伴走支援",
-    description: "広告運用・LINE設計・KPI設計など、立ち上げからグロースまで一貫支援。戦略×感性×顧客理解の3軸で、売上とブランドの両立を目指します。",
+    title: "Prompty",
+    description: "プロンプトが売れる、買える。生成AIテンプレートのマーケットプレイス。ChatGPTやGeminiで使える「再現性の高いプロンプト」を売買・共有できる国内初のプラットフォーム。",
   },
   {
     id: "04",
-    title: "インハウスマーケティング支援/組織育成",
-    description: "マーケティング戦略や顧客理解の思考法を、社内に内製化するための支援を行います。チーム育成・ナレッジ設計・実践ワークを通じて、継続的に成果が出せる体制づくりを支援します。",
-  },
-  {
-    id: "05",
-    title: "自社ブランド立ち上げ準備中",
-    description: "マーケティング支援で培った知見を活かし、現在は自社D2Cブランドの立ち上げに向けて準備を進めています。",
+    title: "AI受託開発",
+    description: "御社専用AIを、最速で構築。自然言語処理・RPA・自動要約・データ分析など、生成AIを活用した業務効率化システムを受託開発。PoCから本番導入まで対応。",
   },
 ];
 
 export const RESULTS = [
   {
     id: 1,
-    client: "株式会社リテカ様",
-    title: "【クリエイティブSaaS】インハウスマーケティング支援",
-    description: "「再現できる思考法」をお渡しするために、マーク脳を体系化。N1インタビューの実施・訴求設計・クリエイティブへの落とし込みの流れまで、実務+思考+フレームごと全てを可視化。フィードバックや壁打ちも重ね、考え方が根づく支援に。",
+    client: "Fortune 500企業様",
+    title: "【AI業務効率化】社内問い合わせ対応システム構築",
+    description: "全社的な問い合わせ対応の効率化を実現。Workmate導入により、サポート業務の75%を自動化し、従業員の生産性向上に貢献。",
     imageUrl: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg",
   },
   {
     id: 2,
-    client: "株式会社EDIT STUDY様",
-    title: "【学習塾 既卒生専門コース】クリエイティブ制作/LP設計",
-    description: "既卒生の不安に寄り添いながら、10ヶ月の戦略的カリキュラムを構造的に可視化。落ち着いたトーン設計で、信頼と納得感を重視。モデルにはAIも活用し、\"誠実な佇まい\"を演出した。",
+    client: "ECサイト運営企業様",
+    title: "【AI接客】Webサイト訪問者対応システム導入",
+    description: "Workmate-Script導入により、CV率を30%向上。24時間対応のAIコンシェルジュで、顧客満足度と売上の両立を実現。",
     imageUrl: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg",
   }
 ];
 
 export const FAQ_ITEMS = [
   {
-    question: "サービスの利用開始までの流れはどのようになっていますか？",
-    answer: "まずはお気軽にお問い合わせください。ご要望をヒアリングさせていただき、最適なプランをご提案いたします。",
+    question: "Promptyは法人でも使えますか？",
+    answer: "はい、社内テンプレート共有や営業チームでの活用に最適です。法人向けプランもご用意しております。",
   },
   {
-    question: "料金体系はどのようになっていますか？",
-    answer: "プロジェクトの規模や内容に応じて、カスタマイズしたお見積りをご提示いたします。",
+    question: "WorkmateはPDFやWordも対応しますか？",
+    answer: "はい。各種ドキュメント形式（PDF、Word、Excel、テキストファイルなど）に対応しています。",
   },
   {
-    question: "納期はどれくらいですか？",
-    answer: "プロジェクトの規模や要件によって異なりますが、通常は2-3ヶ月程度です。詳細はご相談ください。",
+    question: "小規模なPoC開発もお願いできますか？",
+    answer: "30万円〜対応可能です。お気軽にご相談ください。スモールスタートから本格運用まで柔軟に支援いたします。",
   }
 ];
 
 export const COMPANY_INFO = {
-  name: "株式会社RECOR",
-  address: "〒150-0001 東京都渋谷区神宮前六丁目23番4号 桑野ビル2階",
-  established: "2023年1月",
-  representative: "須藤 楠子",
+  name: "Queue株式会社",
+  address: "〒104-0061 東京都中央区銀座8丁目17-5 THE HUB 銀座 OCT",
+  established: "2024年4月",
+  representative: "谷口 太一",
   business: [
-    "マーケティング等に関するコンサルティング事業",
-    "各種商品の企画、デザイン、設計及びそれらに関するコンサルティング事業",
-    "広告宣伝に関する企画、制作及び広告代理店事業"
+    "AI・生成AIソリューションの開発・提供",
+    "SaaSプロダクトの企画・開発・運営",
+    "AI受託開発・コンサルティング事業",
+    "プロンプトマーケットプレイスの運営"
   ]
 };

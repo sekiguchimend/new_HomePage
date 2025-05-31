@@ -27,7 +27,7 @@ export default function About() {
             }}
           >
             <h2 className="text-6xl font-bold mb-4">ABOUT</h2>
-            <p className="text-2xl font-medium mb-10">RECORとは</p>
+            <p className="text-2xl font-medium mb-10">私たちについて</p>
           </motion.div>
 
           <motion.div
@@ -39,23 +39,18 @@ export default function About() {
             }}
             className="space-y-6"
           >
-            <h3 className="text-2xl md:text-3xl font-medium">他者を理解する力を新しい強さの形に。</h3>
+            <h3 className="text-2xl md:text-3xl font-medium">すべての人にAIの力を届ける</h3>
             
             <div className="space-y-4">
-              <p>鋭さや正しさばかりが先に評価される場面が多い今。</p>
-              <p>思いやりの心や、他者への深い理解に根ざした力は、しばしば見過ごされてしまいます。</p>
+              <p>Queue株式会社は、生成AIとオートメーションを軸としたSaaSプロダクトとAI受託開発を提供する、東京・銀座発のテックカンパニーです。</p>
               
-              <p>しかし、AIの時代を乗りこなすのは人間を深く知る人です。</p>
+              <p>「プロンプトの経済圏をつくる」ことをミッションに、すべての人にAIの力を届けるためのプロダクトを創り続けています。</p>
               
-              <p>人に興味があること。感情に触れてきたこと。</p>
-              <p>悩みながらも、誰かを想ってきた経験。</p>
-              <p>そうした背景を持つ人は、心の動きや、想いの届き方を、感覚として知っています。</p>
+              <p>最新の生成AI技術を活用し、プロンプトマーケットプレイス「Prompty」、社内AIチャットボット「Workmate」、そして圧倒的スピードの受託AI開発により、</p>
               
-              <p>その感覚に、論理と思考を丁寧に重ねていくことこそが、</p>
-              <p>価値あるものを届けるための、本質的な力になると考えています。</p>
+              <p>ビジネスの効率化から新しい価値創造まで、包括的にサポートします。</p>
               
-              <p>RECORでは、そんな"人間らしさ"を武器に、</p>
-              <p>人と人、想いと商品をつなぐマーケティングで</p>
+              <p>AIエンジニア・デザイナーなど精鋭10名のチームで、最短1週間でのAI導入を実現し、あらゆる企業のDXを加速させています。</p>
             </div>
           </motion.div>
         </div>

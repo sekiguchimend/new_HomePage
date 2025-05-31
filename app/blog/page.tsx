@@ -4,8 +4,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'ブログ | RECOR - CREATE VALUE WITH EMPATHY',
-  description: 'RECORのブログページです。マーケティングやブランディングに関する最新の情報をお届けします。',
+  title: 'ブログ | Queue株式会社 - 世界を熱狂させる、AIプロダクトをつくる。',
+  description: 'Queue株式会社のブログページです。AI・生成AI・プロンプトエンジニアリングに関する最新の情報をお届けします。',
 };
 
 // ISRで1時間ごとに再生成
@@ -31,7 +31,7 @@ export default async function BlogPage() {
               ブログ
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              マーケティングやブランディングに関する最新の知見、事例、トレンドをお届けします。
+              AI・生成AI・プロンプトエンジニアリングに関する最新の知見、事例、トレンドをお届けします。
             </p>
           </div>
         </div>

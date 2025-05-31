@@ -3,8 +3,8 @@ import { Metadata } from 'next';
 import AnimatedGradientBackground from '@/components/shared/AnimatedGradientBackground';
 
 export const metadata: Metadata = {
-  title: 'お知らせ | RECOR - CREATE VALUE WITH EMPATHY',
-  description: 'RECORのお知らせページです。最新の情報をお届けします。',
+  title: 'お知らせ | Queue株式会社 - 世界を熱狂させる、AIプロダクトをつくる。',
+  description: 'Queue株式会社のお知らせページです。最新の情報をお届けします。',
 };
 
 // ISRで1時間ごとに再生成
