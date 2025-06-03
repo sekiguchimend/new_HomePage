@@ -13,6 +13,9 @@ type Props = {
 // ISRで1時間ごとに再生成
 export const revalidate = 3600;
 
+// 動的ルートの設定 - 事前生成されていないパスも許可
+export const dynamicParams = true;
+
 // 動的ルートの事前生成
 export async function generateStaticParams() {
   try {
