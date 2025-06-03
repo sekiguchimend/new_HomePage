@@ -7,7 +7,7 @@ import { VALUES } from '@/lib/constants';
 export default function Values() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  
+
   return (
     <section ref={ref} className="py-20 md:py-28 bg-gradient-to-br from-white via-[#f0f8ff] to-[#f5f0ff]">
       <div className="container mx-auto px-4">
@@ -41,7 +41,7 @@ export default function Values() {
                   {value.titleEn}
                 </h3>
                 <p className="text-lg text-blue-600 mb-4">{value.titleJa}</p>
-                <div className="space-y-3">
+              <div className="space-y-3">
                   <p className="text-base md:text-lg">{value.description1}</p>
                   {value.description2 && <p className="text-base md:text-lg">{value.description2}</p>}
                 </div>

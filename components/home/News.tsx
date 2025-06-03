@@ -2,8 +2,6 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
 
 type NewsPost = {
   id: string;
@@ -54,14 +52,13 @@ export default function News() {
 
   if (loading) {
     return (
-      <section ref={ref} className="bg-white py-10 md:py-16">
+      <section ref={ref} className="bg-gray-50 py-4">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold mb-6">最新のお知らせ</h2>
-          <div className="border-b border-gray-200 pb-4">
-            <div className="py-4 flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
-              <div className="w-20 h-4 bg-gray-200 animate-pulse rounded"></div>
-              <span className="hidden md:block text-gray-300">|</span>
-              <div className="w-64 h-4 bg-gray-200 animate-pulse rounded"></div>
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center gap-4 text-sm">
+              <span className="text-gray-500 font-medium">お知らせ</span>
+              <div className="w-20 h-3 bg-gray-200 animate-pulse rounded"></div>
+              <div className="w-48 h-3 bg-gray-200 animate-pulse rounded"></div>
             </div>
           </div>
         </div>
@@ -70,41 +67,26 @@ export default function News() {
   }
 
   return (
-    <section ref={ref} className="bg-white py-10 md:py-16">
+    <section ref={ref} className="bg-gray-50 py-4">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold">最新のお知らせ</h2>
-          <Link 
-            href="/news"
-            className="flex items-center gap-2 text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors"
-          >
-            すべて見る
-            <ArrowRight className="w-4 h-4 text-blue-600" />
-          </Link>
-        </div>
-        
-        <div className="border-b border-gray-200 pb-4">
+        <div className="max-w-4xl mx-auto">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5 }}
-            className="py-4 flex flex-col md:flex-row md:items-center gap-2 md:gap-8 group hover:bg-gray-50 rounded-lg px-4 -mx-4 transition-colors duration-200"
+            initial={{ opacity: 0, y: 10 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+            transition={{ duration: 0.3 }}
+            className="flex items-center gap-4 text-sm"
           >
-            <span className="text-sm font-medium text-gray-600 flex-shrink-0">
+            <span className="text-gray-500 font-medium flex-shrink-0">お知らせ</span>
+            <span className="text-gray-600 flex-shrink-0">
               {latestNews && new Date(latestNews.publishedAt).toLocaleDateString('ja-JP', {
                 year: 'numeric',
                 month: '2-digit',
                 day: '2-digit'
               }).replace(/\//g, '.')}
             </span>
-            <span className="hidden md:block text-gray-300">|</span>
-            <Link 
-              href={latestNews?.id.startsWith('fallback') ? '#' : `/news/${latestNews?.id}`}
-              className="text-base hover:underline hover:text-blue-600 transition-colors duration-200 flex items-center gap-2 group-hover:translate-x-1 transition-transform duration-200"
-            >
+            <span className="text-gray-700 truncate">
               {latestNews?.title}
-              <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-gray-600" />
-            </Link>
+            </span>
           </motion.div>
         </div>
       </div>

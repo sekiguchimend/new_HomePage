@@ -109,10 +109,10 @@ export const getBlogPost = async (id: string, queries?: MicroCMSQueries) => {
   try {
     console.log(`getBlogPost: MicroCMS APIを呼び出し中... (endpoint: blogs, contentId: ${id})`);
     const result = await client.getListDetail<BlogPost>({
-      endpoint: 'blogs',
-      contentId: id,
-      queries,
-    });
+    endpoint: 'blogs',
+    contentId: id,
+    queries,
+  });
     console.log(`getBlogPost: 記事取得成功 "${result.title}"`);
     return result;
   } catch (error) {
