@@ -60,7 +60,7 @@ export const BUSINESS_SERVICES = [
 export const RESULTS = [
   {
     id: 1,
-    client: "Fortune 500企業様",
+    client: "大手企業様",
     title: "【AI業務効率化】社内問い合わせ対応システム構築",
     description: "全社的な問い合わせ対応の効率化を実現。Workmate導入により、サポート業務の75%を自動化し、従業員の生産性向上に貢献。",
     imageUrl: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg",
