@@ -55,11 +55,6 @@ export const BUSINESS_SERVICES = [
     title: "Prompty",
     description: "プロンプトが売れる、買える。生成AIテンプレートのマーケットプレイス。ChatGPTやGeminiで使える「再現性の高いプロンプト」を売買・共有できる国内初のプラットフォーム。",
   },
-  {
-    id: "04",
-    title: "AI受託開発",
-    description: "御社専用AIを、最速で構築。自然言語処理・RPA・自動要約・データ分析など、生成AIを活用した業務効率化システムを受託開発。PoCから本番導入まで対応。",
-  },
 ];
 
 export const RESULTS = [
@@ -89,8 +84,8 @@ export const FAQ_ITEMS = [
     answer: "はい。各種ドキュメント形式（PDF、Word、Excel、テキストファイルなど）に対応しています。",
   },
   {
-    question: "小規模なPoC開発もお願いできますか？",
-    answer: "30万円〜対応可能です。お気軽にご相談ください。スモールスタートから本格運用まで柔軟に支援いたします。",
+    question: "サポート体制はどうなっていますか？",
+    answer: "各プロダクトには専任のサポートチームが付き、導入から運用まで手厚くサポートいたします。",
   }
 ];
 
@@ -102,7 +97,6 @@ export const COMPANY_INFO = {
   business: [
     "AI・生成AIソリューションの開発・提供",
     "SaaSプロダクトの企画・開発・運営",
-    "AI受託開発・コンサルティング事業",
     "プロンプトマーケットプレイスの運営"
   ]
 };

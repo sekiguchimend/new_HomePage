@@ -16,10 +16,6 @@ export default function AboutContent() {
     {
       title: "Prompty",
       description: "プロンプトが売れる、買える。生成AIテンプレートのマーケットプレイス。ChatGPTやGeminiで使える「再現性の高いプロンプト」を売買・共有できる国内初のプラットフォーム。高品質な指示文を使うだけで、LP作成・営業リスト作成・社内文書の生成が一瞬で可能に。",
-    },
-    {
-      title: "AI受託開発",
-      description: "御社専用AIを、最速で構築。ビジネス課題をAIで解決。自然言語処理・RPA・自動要約・データ分析など、生成AIを活用した業務効率化システムを受託開発。PoCから本番導入まで、スモールスタートで柔軟に支援します。",
     }
   ];
 
@@ -66,7 +62,7 @@ export default function AboutContent() {
             className="mb-12 space-y-6"
           >
             <p className="text-lg text-gray-200 leading-relaxed">
-              Queue株式会社は、生成AIとオートメーションを軸としたSaaSプロダクトとAI受託開発を提供する、東京・銀座発のテックカンパニーです。
+              Queue株式会社は、生成AIとオートメーションを軸としたSaaSプロダクトを提供する、東京・銀座発のテックカンパニーです。
             </p>
             
             <p className="text-lg text-gray-200 leading-relaxed">

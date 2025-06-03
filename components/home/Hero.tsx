@@ -106,7 +106,7 @@ export default function Hero() {
             variants={itemVariants}
             className="max-w-2xl text-sm md:text-base leading-relaxed text-gray-600 mb-8"
           >
-            プロンプトマーケット「Prompty」、社内AIチャット「Workmate」、そして圧倒的スピードの受託AI開発。
+            プロンプトマーケット「Prompty」、社内AIチャット「Workmate」。
             Queueは、ビジネスを進化させるAIテクノロジーの力をすべての企業へ届けます。
           </motion.p>
           
