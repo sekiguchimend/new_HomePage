@@ -52,13 +52,18 @@ export default function News() {
 
   if (loading) {
     return (
-      <section ref={ref} className="bg-gray-50 py-4">
+      <section ref={ref} className="bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-blue-100">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex items-center gap-4 text-sm">
-              <span className="text-gray-500 font-medium">お知らせ</span>
-              <div className="w-20 h-3 bg-gray-200 animate-pulse rounded"></div>
-              <div className="w-48 h-3 bg-gray-200 animate-pulse rounded"></div>
+          <div className="max-w-6xl mx-auto py-3">
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium text-blue-700">お知らせ</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-20 h-3 bg-blue-200 animate-pulse rounded"></div>
+                <div className="w-48 h-3 bg-blue-200 animate-pulse rounded"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -67,26 +72,33 @@ export default function News() {
   }
 
   return (
-    <section ref={ref} className="bg-gray-50 py-4">
+    <section ref={ref} className="bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-blue-100">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto py-3">
           <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-            transition={{ duration: 0.3 }}
-            className="flex items-center gap-4 text-sm"
+            initial={{ opacity: 0, x: -20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-6"
           >
-            <span className="text-gray-500 font-medium flex-shrink-0">お知らせ</span>
-            <span className="text-gray-600 flex-shrink-0">
-              {latestNews && new Date(latestNews.publishedAt).toLocaleDateString('ja-JP', {
-                year: 'numeric',
-                month: '2-digit',
-                day: '2-digit'
-              }).replace(/\//g, '.')}
-            </span>
-            <span className="text-gray-700 truncate">
-              {latestNews?.title}
-            </span>
+            <div className="flex items-center gap-2 flex-shrink-0">
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium text-blue-700">お知らせ</span>
+            </div>
+            
+            <div className="flex items-center gap-4 min-w-0 flex-1">
+              <span className="text-sm text-blue-600 font-mono flex-shrink-0">
+                {latestNews && new Date(latestNews.publishedAt).toLocaleDateString('ja-JP', {
+                  year: 'numeric',
+                  month: '2-digit',
+                  day: '2-digit'
+                }).replace(/\//g, '.')}
+              </span>
+              
+              <span className="text-sm text-gray-700 truncate font-medium">
+                {latestNews?.title}
+              </span>
+            </div>
           </motion.div>
         </div>
       </div>
