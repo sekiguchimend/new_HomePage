@@ -49,17 +49,7 @@ export const metadata: Metadata = {
     canonical: baseUrl,
   },
   icons: {
-    icon: [
-      {
-        url: '/favicon.ico?v=2',
-        sizes: '32x32',
-        type: 'image/x-icon',
-      },
-      {
-        url: '/favicon.svg?v=2',
-        type: 'image/svg+xml',
-      },
-    ],
+    icon: '/favicon.ico?v=2',
     shortcut: '/favicon.ico?v=2',
   },
   openGraph: {
