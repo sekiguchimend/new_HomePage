@@ -10,8 +10,8 @@ type Props = {
   };
 };
 
-// ISRで1時間ごとに再生成
-export const revalidate = 3600;
+// ISRで5分ごとに再生成（開発中は短く設定）
+export const revalidate = 300;
 
 // 動的ルートの事前生成
 export async function generateStaticParams() {
@@ -233,7 +233,7 @@ export default async function BlogPostPage({ params }: Props) {
         }}
       />
       
-      <div className="min-h-screen bg-white">
+      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         {/* パンくずナビ */}
         <nav className="pt-32 pb-8 bg-gray-50" aria-label="パンくずナビゲーション">
           <div className="container mx-auto px-4">
@@ -260,7 +260,7 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </nav>
 
-        <article className="py-16" itemScope itemType="https://schema.org/BlogPosting">
+        <article className="py-16 flex-1" itemScope itemType="https://schema.org/BlogPosting">
           <div className="container mx-auto px-4 max-w-4xl">
             {/* 記事ヘッダー */}
             <header className="mb-12">
@@ -334,7 +334,7 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
 
             {/* 記事フッター */}
-            <footer className="mt-16 pt-8 border-t border-gray-200">
+            <footer className="mt-16 pt-8 border-t border-gray-200" style={{ marginBottom: '30px' }}>
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <Link
                   href="/blog"

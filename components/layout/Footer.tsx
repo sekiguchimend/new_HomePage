@@ -3,7 +3,7 @@ import { NAVIGATION_ITEMS } from '@/lib/constants';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-white py-12">
+    <footer className="w-full bg-white py-12" style={{ marginBottom: '30px' }}>
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="mb-8 md:mb-0">
