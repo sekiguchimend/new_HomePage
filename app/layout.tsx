@@ -48,6 +48,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: baseUrl,
   },
+  icons: {
+    icon: [
+      {
+        url: '/favicon.ico?v=2',
+        sizes: '32x32',
+        type: 'image/x-icon',
+      },
+      {
+        url: '/favicon.svg?v=2',
+        type: 'image/svg+xml',
+      },
+    ],
+    shortcut: '/favicon.ico?v=2',
+  },
   openGraph: {
     type: 'website',
     locale: 'ja_JP',
@@ -224,10 +238,7 @@ export default function RootLayout({
         {/* DNS prefetch */}
         <link rel="dns-prefetch" href="//queue.co.jp" />
         
-        {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        {/* Manifest */}
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className="min-h-screen bg-background font-sans antialiased">
