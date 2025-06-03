@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   description: 'Queue株式会社のブログページです。AI・生成AI・プロンプトエンジニアリングに関する最新の情報をお届けします。',
 };
 
-// ISRで1時間ごとに再生成
-export const revalidate = 3600;
+// ISRで5分ごとに再生成（開発中は短く設定）
+export const revalidate = 300;
 
 export default async function BlogPage() {
   let posts: BlogPost[] = [];
@@ -22,7 +22,7 @@ export default async function BlogPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
       {/* ヒーローセクション */}
       <section className="pt-32 pb-16 bg-gradient-to-r from-gray-50 to-white">
         <div className="container mx-auto px-4">
@@ -38,7 +38,7 @@ export default async function BlogPage() {
       </section>
 
       {/* ブログ記事一覧 */}
-      <section className="py-16">
+      <section className="py-16 flex-1">
         <div className="container mx-auto px-4">
           {posts.length === 0 ? (
             <div className="text-center py-16">

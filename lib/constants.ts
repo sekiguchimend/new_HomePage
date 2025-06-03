@@ -24,13 +24,6 @@ export const VALUES = [
     description2: "知識とノウハウを共有し、価値を循環させる。",
   },
   {
-    id: "rapid-development",
-    titleEn: "RAPID DEVELOPMENT",
-    titleJa: "圧倒的スピード",
-    description1: "最短1週間でAIソリューションを導入可能にする。",
-    description2: "スモールスタートから本格運用まで、柔軟に対応する。",
-  },
-  {
     id: "business-evolution",
     titleEn: "BUSINESS EVOLUTION",
     titleJa: "ビジネスを進化させる",
@@ -67,7 +60,7 @@ export const RESULTS = [
   },
   {
     id: 2,
-    client: "ECサイト運営企業様",
+    client: "リフォーム会社様",
     title: "【AI接客】Webサイト訪問者対応システム導入",
     description: "Workmate-Script導入により、CV率を30%向上。24時間対応のAIコンシェルジュで、顧客満足度と売上の両立を実現。",
     imageUrl: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg",
@@ -91,7 +84,7 @@ export const FAQ_ITEMS = [
 
 export const COMPANY_INFO = {
   name: "Queue株式会社",
-  address: "〒104-0061 東京都中央区銀座8丁目17-5 THE HUB 銀座 OCT",
+  address: "〒104-0061 東京都中央区銀座1-22-11 銀座大竹ビジデンス2F",
   established: "2024年4月",
   representative: "谷口 太一",
   business: [
@@ -100,3 +93,21 @@ export const COMPANY_INFO = {
     "プロンプトマーケットプレイスの運営"
   ]
 };
+
+export const SAMPLE_RESULTS = [
+  {
+    date: "2024.12.15",
+    client: "大手企業様",
+    overview: "日本最大級のフードデリバリーサービス「Yori」を開発"
+  },
+  {
+    date: "2024.11.20",
+    client: "リフォーム会社様",
+    overview: "ホームページにAIチャットボットを導入し、お客様対応を24時間自動化"
+  },
+  {
+    date: "2024.10.18",
+    client: "ヘルスケア企業様",
+    overview: "データ分析業務を自動化し、月40時間の業務時間を削減"
+  }
+];

@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   description: 'Queue株式会社のお知らせページです。最新の情報をお届けします。',
 };
 
-// ISRで1時間ごとに再生成
-export const revalidate = 3600;
+// ISRで5分ごとに再生成（開発中は短く設定）
+export const revalidate = 300;
 
 export default async function NewsPage() {
   let news: NewsPost[] = [];
@@ -21,9 +21,9 @@ export default async function NewsPage() {
   }
 
   return (
-    <>
+    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
       <AnimatedGradientBackground />
-      <div className="pt-32 pb-20">
+      <div className="pt-32 pb-20 flex-1">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-12">お知らせ</h1>
@@ -68,6 +68,6 @@ export default async function NewsPage() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
