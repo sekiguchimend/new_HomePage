@@ -38,7 +38,7 @@ export default async function BlogPage() {
       </section>
 
       {/* ブログ記事一覧 */}
-      <section className="py-16 flex-1">
+      <section className="py-16 flex-1 pb-24">
         <div className="container mx-auto px-4">
           {posts.length === 0 ? (
             <div className="text-center py-16">
@@ -50,7 +50,7 @@ export default async function BlogPage() {
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
               {posts.map((post) => (
                 <article
                   key={post.id}

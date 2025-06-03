@@ -1,5 +1,6 @@
 export const NAVIGATION_ITEMS = [
   { label: "Queueとは", href: "/about" },
+  { label: "プロダクト", href: "/products" },
   { label: "サービス", href: "/services" },
   { label: "実績", href: "/results" },
   { label: "ブログ", href: "/blog" },
@@ -62,7 +63,7 @@ export const RESULTS = [
     id: 2,
     client: "リフォーム会社様",
     title: "【AI接客】Webサイト訪問者対応システム導入",
-    description: "Workmate-Script導入により、CV率を30%向上。24時間対応のAIコンシェルジュで、顧客満足度と売上の両立を実現。",
+    description: "Workmate-Script導入により、CV率を向上。24時間対応のAIコンシェルジュで、顧客満足度と売上の両立を実現。",
     imageUrl: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg",
   }
 ];
@@ -88,8 +89,7 @@ export const COMPANY_INFO = {
   established: "2024年4月",
   representative: "谷口 太一",
   business: [
-    "AI・生成AIソリューションの開発・提供",
-    "SaaSプロダクトの企画・開発・運営",
+    "AISaaSプロダクトの企画・開発・運営",
     "プロンプトマーケットプレイスの運営"
   ]
 };

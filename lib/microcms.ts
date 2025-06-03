@@ -4,6 +4,10 @@ import { createClient, type MicroCMSQueries } from 'microcms-js-sdk';
 const serviceDomain = process.env.MICROCMS_SERVICE_DOMAIN;
 const apiKey = process.env.MICROCMS_API_KEY;
 
+console.log('MicroCMS設定確認:');
+console.log('- SERVICE_DOMAIN:', serviceDomain ? `${serviceDomain.substring(0, 10)}...` : '未設定');
+console.log('- API_KEY:', apiKey ? `${apiKey.substring(0, 10)}...` : '未設定');
+
 // microCMSクライアントの作成（環境変数が設定されている場合のみ）
 export const client = serviceDomain && apiKey 
   ? createClient({
@@ -11,6 +15,10 @@ export const client = serviceDomain && apiKey
       apiKey,
     })
   : null;
+
+if (!client) {
+  console.error('MicroCMS クライアントの初期化に失敗しました。環境変数を確認してください。');
+}
 
 // ブログ記事の型定義（実際のスキーマに合わせて修正）
 export type BlogPost = {
@@ -90,15 +98,27 @@ export const getBlogPosts = async (queries?: MicroCMSQueries) => {
 
 // 単一のブログ記事を取得する関数
 export const getBlogPost = async (id: string, queries?: MicroCMSQueries) => {
+  console.log(`getBlogPost: ID "${id}" の記事を取得中...`);
+  
   if (!client) {
-    throw new Error('microCMS client is not initialized. Please check MICROCMS_SERVICE_DOMAIN and MICROCMS_API_KEY environment variables.');
+    const error = new Error('microCMS client is not initialized. Please check MICROCMS_SERVICE_DOMAIN and MICROCMS_API_KEY environment variables.');
+    console.error('getBlogPost: クライアント未初期化:', error.message);
+    throw error;
   }
   
-  return await client.getListDetail<BlogPost>({
-    endpoint: 'blogs',
-    contentId: id,
-    queries,
-  });
+  try {
+    console.log(`getBlogPost: MicroCMS APIを呼び出し中... (endpoint: blogs, contentId: ${id})`);
+    const result = await client.getListDetail<BlogPost>({
+      endpoint: 'blogs',
+      contentId: id,
+      queries,
+    });
+    console.log(`getBlogPost: 記事取得成功 "${result.title}"`);
+    return result;
+  } catch (error) {
+    console.error(`getBlogPost: ID "${id}" の記事取得に失敗:`, error);
+    throw error;
+  }
 };
 
 // ニュース記事を取得する関数
