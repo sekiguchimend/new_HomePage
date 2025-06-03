@@ -16,7 +16,7 @@ export default function ServicesPage() {
             transition={{ duration: 0.6 }}
             className="max-w-5xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-8">事業内容</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-8">Services</h1>
             
             <div className="space-y-20">
               {BUSINESS_SERVICES.map((service, index) => (

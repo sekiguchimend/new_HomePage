@@ -16,7 +16,7 @@ export default function FAQPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-8">よくある質問</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-8">FAQ</h1>
             
             <div className="space-y-4">
               {FAQ_ITEMS.map((item, index) => (

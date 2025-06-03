@@ -41,7 +41,7 @@ export default function AboutContent() {
           {/* ヘッダー */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              <span className="text-purple-700">Q</span>ueueとは
+              <span className="text-purple-700">A</span>bout
             </h1>
             
             <motion.div

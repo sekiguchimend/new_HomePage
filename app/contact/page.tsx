@@ -42,7 +42,7 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-8">お問い合わせ・資料請求</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-8">Contact</h1>
             
             <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-sm">
               <form onSubmit={handleSubmit} className="space-y-6">

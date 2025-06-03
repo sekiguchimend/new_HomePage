@@ -21,12 +21,12 @@ export default async function NewsPage() {
   }
 
   return (
-    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       <AnimatedGradientBackground />
-      <div className="pt-32 pb-20 flex-1">
+      <div className="pt-32 pb-32 flex-1">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-12">お知らせ</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-12">News</h1>
             
             {news.length === 0 ? (
               <div className="text-center py-16">
@@ -38,7 +38,7 @@ export default async function NewsPage() {
                 </p>
               </div>
             ) : (
-              <div className="space-y-0">
+              <div className="space-y-0 mb-16">
                 {news.map((item) => (
                   <article
                     key={item.id}

@@ -22,13 +22,13 @@ export default async function BlogPage() {
   }
 
   return (
-    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* ヒーローセクション */}
       <section className="pt-32 pb-16 bg-gradient-to-r from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              ブログ
+              Blog
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               AI・生成AI・プロンプトエンジニアリングに関する最新の知見、事例、トレンドをお届けします。
@@ -38,7 +38,7 @@ export default async function BlogPage() {
       </section>
 
       {/* ブログ記事一覧 */}
-      <section className="py-16 flex-1 pb-24">
+      <section className="py-16 flex-1 pb-32">
         <div className="container mx-auto px-4">
           {posts.length === 0 ? (
             <div className="text-center py-16">
@@ -50,7 +50,7 @@ export default async function BlogPage() {
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
               {posts.map((post) => (
                 <article
                   key={post.id}

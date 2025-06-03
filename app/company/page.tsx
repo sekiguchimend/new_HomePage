@@ -16,7 +16,7 @@ export default function CompanyPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-8">会社概要</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-8">Company</h1>
             
             <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-sm">
               <dl className="space-y-6">
