@@ -51,7 +51,7 @@ export type Result = {
   id: string;
   title: string;
   content: string;
-  eyecatch?: {
+  image?: {
     url: string;
     height: number;
     width: number;
@@ -152,10 +152,22 @@ export const getResults = async (queries?: MicroCMSQueries) => {
     throw new Error('microCMS client is not initialized. Please check MICROCMS_SERVICE_DOMAIN and MICROCMS_API_KEY environment variables.');
   }
   
-  return await client.getList<Result>({
+  console.log('getResults: クエリパラメータ:', queries);
+  
+  const result = await client.getList<Result>({
     endpoint: 'results',
     queries,
   });
+  
+  console.log('getResults: APIレスポンス:', {
+    totalCount: result.totalCount,
+    limit: result.limit,
+    offset: result.offset,
+    contentsLength: result.contents.length,
+    firstContent: result.contents[0]
+  });
+  
+  return result;
 };
 
 // 単一の実績を取得する関数

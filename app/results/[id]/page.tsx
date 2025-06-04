@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       openGraph: {
         title: result.title,
         description: result.content.replace(/<[^>]*>/g, '').substring(0, 160),
-        images: result.eyecatch ? [result.eyecatch.url] : [],
+        images: result.image ? [result.image.url] : [],
       },
     };
   } catch (error) {
@@ -102,10 +102,10 @@ export default async function ResultDetailPage({ params }: Props) {
                 </h1>
                 
                 {/* 画像の条件付き表示 */}
-                {result.eyecatch ? (
+                {result.image ? (
                   <div className="aspect-video relative rounded-lg overflow-hidden mb-6">
                     <Image
-                      src={result.eyecatch.url}
+                      src={result.image.url}
                       alt={result.title}
                       fill
                       className="object-cover"

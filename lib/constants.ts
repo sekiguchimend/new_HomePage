@@ -89,7 +89,7 @@ export const COMPANY_INFO = {
   established: "2024年4月",
   representative: "谷口 太一",
   business: [
-    "AISaaSプロダクトの企画・開発・運営",
+    "AI-SaaSプロダクトの企画・開発・運営",
     "プロンプトマーケットプレイスの運営"
   ]
 };
