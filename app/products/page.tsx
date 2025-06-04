@@ -34,7 +34,7 @@ export default function ProductsPage() {
         '24時間自動対応',
         '多言語サポート'
       ],
-      link: 'https://workmate.ai',
+      link: 'https://workmate-ai.com',
       category: '社内AIアシスタント'
     },
     {
