@@ -117,7 +117,7 @@ export default function Header() {
           >
             <div className="relative w-10 h-10">
               <Image
-                src="/queue.png"
+                src="/Queue.png"
                 alt="Queue"
                 fill
                 className="object-contain"

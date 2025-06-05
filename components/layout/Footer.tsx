@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { NAVIGATION_ITEMS } from '@/lib/constants';
 
 export default function Footer() {
@@ -7,8 +8,16 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="mb-8 md:mb-0">
-            <Link href="/" className="text-black text-2xl font-bold">
-              Queue
+            <Link href="/" className="flex items-center space-x-2">
+              <div className="relative w-16 h-16">
+                <Image
+                  src="/Queue.png"
+                  alt="Queue"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
             </Link>
             <p className="mt-2 text-sm text-gray-600">
               © {new Date().getFullYear()} Queue株式会社 All Rights Reserved.

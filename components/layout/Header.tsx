@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { NAVIGATION_ITEMS } from '@/lib/constants';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
@@ -34,8 +35,16 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <Link href="/" className="text-black text-2xl font-bold">
-            Queue
+        <Link href="/" className="flex items-center space-x-2">
+          <div className="relative w-16 h-16">
+            <Image
+              src="/Queue.png"
+              alt="Queue"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
         </Link>
         
           {/* デスクトップナビゲーション */}
@@ -104,8 +113,16 @@ export default function Header() {
         <div className="flex flex-col h-full">
           {/* モバイルメニューヘッダー */}
           <div className="flex items-center justify-between p-6 border-b border-gray-200">
-            <Link href="/" className="text-black text-2xl font-bold" onClick={closeMobileMenu}>
-              Queue
+            <Link href="/" className="flex items-center space-x-2" onClick={closeMobileMenu}>
+              <div className="relative w-16 h-16">
+                <Image
+                  src="/Queue.png"
+                  alt="Queue"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
             </Link>
             <button 
               onClick={closeMobileMenu}

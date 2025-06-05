@@ -49,6 +49,11 @@ export const BUSINESS_SERVICES = [
     title: "Prompty",
     description: "プロンプトが売れる、買える。生成AIテンプレートのマーケットプレイス。ChatGPTやGeminiで使える「再現性の高いプロンプト」を売買・共有できる国内初のプラットフォーム。",
   },
+  {
+    id: "04",
+    title: "AI受託開発",
+    description: "企業様のビジネス課題に合わせたAIソリューションの受託開発。生成AI・チャットボット・業務自動化システムなど、お客様のニーズに応じたカスタムAI開発を提供します。",
+  },
 ];
 
 export const RESULTS = [

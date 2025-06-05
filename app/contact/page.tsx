@@ -16,7 +16,7 @@ export default function ContactPage() {
     phone: '',
     message: '',
   });
-
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   

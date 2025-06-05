@@ -13,8 +13,12 @@ export async function POST(request: NextRequest) {
       id: Date.now().toString(),
     };
     
-    // ファイルパス（public/contactsディレクトリに保存）
-    const contactsDir = path.join(process.cwd(), 'public', 'contacts');
+    // 本番環境とローカル環境の両方で動作するファイルパス設定
+    // 本番環境では /tmp ディレクトリを使用（Vercelなどの場合）
+    const isProduction = process.env.NODE_ENV === 'production';
+    const contactsDir = isProduction 
+      ? path.join('/tmp', 'contacts')
+      : path.join(process.cwd(), 'public', 'contacts');
     
     // ディレクトリが存在しない場合は作成
     if (!fs.existsSync(contactsDir)) {
@@ -28,7 +32,16 @@ export async function POST(request: NextRequest) {
     // JSONファイルとして保存
     fs.writeFileSync(filePath, JSON.stringify(contactData, null, 2));
     
-    console.log('📧 新しいお問い合わせを受信:', contactData);
+    // ログにも出力（本番環境でのデバッグ用）
+    console.log('📧 新しいお問い合わせを受信:', {
+      ...contactData,
+      filePath: isProduction ? '[本番環境のため非表示]' : filePath
+    });
+    
+    // 本番環境の場合は追加のログ出力
+    if (isProduction) {
+      console.log(`📁 ファイル保存先: ${fileName} (本番環境)`);
+    }
     
     return NextResponse.json({ 
       success: true, 
@@ -38,6 +51,16 @@ export async function POST(request: NextRequest) {
     
   } catch (error) {
     console.error('お問い合わせの保存に失敗:', error);
+    
+    // 本番環境でのエラーハンドリング強化
+    if (process.env.NODE_ENV === 'production') {
+      console.error('本番環境でのエラー詳細:', {
+        error: error instanceof Error ? error.message : String(error),
+        stack: error instanceof Error ? error.stack : undefined,
+        timestamp: new Date().toISOString()
+      });
+    }
+    
     return NextResponse.json(
       { success: false, message: 'エラーが発生しました' },
       { status: 500 }
