@@ -75,7 +75,7 @@ export default function News() {
     <section ref={ref} className="bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-blue-100">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto py-3">
-          <motion.div 
+            <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
             transition={{ duration: 0.5 }}
@@ -99,7 +99,7 @@ export default function News() {
                 {latestNews?.title}
               </span>
             </div>
-          </motion.div>
+            </motion.div>
         </div>
       </div>
     </section>

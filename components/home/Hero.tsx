@@ -61,7 +61,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full pt-40 pb-20 md:pt-48 md:pb-28 overflow-hidden">      
+    <section className="relative w-full pt-40 pb-20 md:pt-48 md:pb-28 overflow-hidden">
       <div className="container relative mx-auto px-4">
         <motion.div 
           className="max-w-4xl"
@@ -114,7 +114,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 mt-8"
             variants={containerVariants}
           >
-            <motion.button 
+            {/* <motion.button 
               variants={buttonVariants}
               whileHover={{ 
                 scale: 1.05,
@@ -131,7 +131,7 @@ export default function Hero() {
                 whileHover={{ x: '100%' }}
                 transition={{ duration: 0.6 }}
               />
-            </motion.button>
+            </motion.button> */}
             
             <motion.button 
               variants={buttonVariants}

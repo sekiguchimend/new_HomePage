@@ -16,16 +16,51 @@ export default function ContactPage() {
     phone: '',
     message: '',
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, you would handle form submission here
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        // フォームをリセット
+        setFormData({
+          inquiryType: 'general',
+          name: '',
+          company: '',
+          department: '',
+          position: '',
+          email: '',
+          phone: '',
+          message: '',
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('送信エラー:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // 資料請求かどうかで必須項目を判定
@@ -170,7 +205,7 @@ export default function ContactPage() {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="03-1234-5678"
+                    placeholder="03-5324-2678"
                   />
                 </div>
                 
@@ -207,10 +242,54 @@ export default function ContactPage() {
                     </ul>
                   </div>
                 )}
+
+                {/* 成功・エラーメッセージ */}
+                {submitStatus === 'success' && (
+                  <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                    <div className="flex items-center">
+                      <div className="text-green-600 mr-3">✅</div>
+                      <div>
+                        <h3 className="text-sm font-semibold text-green-800">送信完了</h3>
+                        <p className="text-sm text-green-700">
+                          {isResourceRequest 
+                            ? 'お問い合わせを受け付けました。営業日2-3日以内にご連絡いたします。' 
+                            : 'お問い合わせを受け付けました。担当者からご連絡いたします。'
+                          }
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {submitStatus === 'error' && (
+                  <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                    <div className="flex items-center">
+                      <div className="text-red-600 mr-3">❌</div>
+                      <div>
+                        <h3 className="text-sm font-semibold text-red-800">送信エラー</h3>
+                        <p className="text-sm text-red-700">
+                          申し訳ございませんが、送信に失敗しました。もう一度お試しいただくか、直接お電話でお問い合わせください。
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 
                 <div className="text-center">
-                  <Button type="submit" size="lg">
-                    {isResourceRequest ? '資料請求する' : '送信する'}
+                  <Button 
+                    type="submit" 
+                    size="lg"
+                    disabled={isSubmitting}
+                    className="min-w-[200px]"
+                  >
+                    {isSubmitting ? (
+                      <div className="flex items-center">
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                        送信中...
+                      </div>
+                    ) : (
+                      isResourceRequest ? '資料請求する' : '送信する'
+                    )}
                   </Button>
                 </div>
               </form>

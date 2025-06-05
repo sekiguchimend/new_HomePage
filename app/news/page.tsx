@@ -30,12 +30,12 @@ export default async function NewsPage() {
             
             {news.length === 0 ? (
               <div className="text-center py-16">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  お知らせの準備中です
-                </h2>
-                <p className="text-gray-600">
-                  現在、お知らせを準備中です。しばらくお待ちください。
-                </p>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                    お知らせの準備中です
+                  </h2>
+                  <p className="text-gray-600">
+                    現在、お知らせを準備中です。しばらくお待ちください。
+                  </p>
               </div>
             ) : (
               <div className="space-y-0 mb-16">
@@ -57,8 +57,8 @@ export default async function NewsPage() {
                       
                       <div className="flex-1">
                         <h2 className="text-base font-normal text-gray-900 leading-relaxed">
-                          {item.title}
-                        </h2>
+                            {item.title}
+                          </h2>
                       </div>
                     </div>
                   </article>

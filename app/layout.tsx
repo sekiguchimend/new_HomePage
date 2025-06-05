@@ -118,12 +118,13 @@ export default function RootLayout({
     foundingDate: '2024-04-01',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '銀座8丁目17-5 THE HUB 銀座 OCT',
+      streetAddress: '銀座１丁目２２番１１号銀座大竹ビジデンス２Ｆ',
       addressLocality: '中央区',
       addressRegion: '東京都',
       postalCode: '104-0061',
       addressCountry: 'JP',
     },
+    telephone: '03-5324-2678',
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',

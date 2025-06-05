@@ -28,38 +28,38 @@ export default function Header() {
 
   return (
     <>
-      <header 
-        className={`fixed w-full z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-white/90 backdrop-blur-sm shadow-sm py-3' : 'bg-transparent py-5'
-        }`}
-      >
-        <div className="container mx-auto px-4 flex items-center justify-between">
-          <Link href="/" className="text-black text-2xl font-bold">
+    <header 
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white/90 backdrop-blur-sm shadow-sm py-3' : 'bg-transparent py-5'
+      }`}
+    >
+      <div className="container mx-auto px-4 flex items-center justify-between">
+        <Link href="/" className="text-black text-2xl font-bold">
             Queue
-          </Link>
-          
+        </Link>
+        
           {/* デスクトップナビゲーション */}
-          <nav className="hidden md:flex items-center space-x-6">
-            {NAVIGATION_ITEMS.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-black/70 ${
-                  pathname === item.href ? 'text-black' : 'text-black/80'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-            
-            <Link 
-              href="/contact" 
-              className="px-5 py-2 bg-[#333] text-white rounded-full text-sm font-medium hover:bg-[#555] transition-colors"
+        <nav className="hidden md:flex items-center space-x-6">
+          {NAVIGATION_ITEMS.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`text-sm font-medium transition-colors hover:text-black/70 ${
+                pathname === item.href ? 'text-black' : 'text-black/80'
+              }`}
             >
-              お問い合わせ・資料請求
+              {item.label}
             </Link>
-          </nav>
+          ))}
           
+          <Link 
+            href="/contact" 
+            className="px-5 py-2 bg-[#333] text-white rounded-full text-sm font-medium hover:bg-[#555] transition-colors"
+          >
+            お問い合わせ・資料請求
+          </Link>
+        </nav>
+        
           {/* ハンバーガーメニューボタン */}
           <button 
             className="md:hidden text-black z-60 relative"
@@ -114,9 +114,9 @@ export default function Header() {
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
+          </svg>
+        </button>
+      </div>
 
           {/* モバイルメニュー項目 */}
           <div className="flex-1 py-6">

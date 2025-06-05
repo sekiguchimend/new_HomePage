@@ -85,7 +85,8 @@ export const FAQ_ITEMS = [
 
 export const COMPANY_INFO = {
   name: "Queue株式会社",
-  address: "〒104-0061 東京都中央区銀座一丁目22番11号",
+  address: "〒104-0061 東京都中央区銀座１丁目２２番１１号銀座大竹ビジデンス２Ｆ",
+  phone: "03-5324-2678",
   established: "2024年4月",
   representative: "谷口 太一",
   business: [

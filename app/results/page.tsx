@@ -109,14 +109,14 @@ export default async function ResultsPage() {
                               実績
                             </span>
                             <time className="text-sm text-gray-500">
-                              {new Date(result.publishedAt).toLocaleDateString('ja-JP', {
-                                year: 'numeric',
-                                month: '2-digit',
-                                day: '2-digit'
-                              }).replace(/\//g, '.')}
-                            </time>
+                          {new Date(result.publishedAt).toLocaleDateString('ja-JP', {
+                            year: 'numeric',
+                            month: '2-digit',
+                            day: '2-digit'
+                          }).replace(/\//g, '.')}
+                        </time>
                           </div>
-                          
+                        
                           <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                             {result.title}
                           </h2>

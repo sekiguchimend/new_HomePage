@@ -31,6 +31,11 @@ export default function CompanyPage() {
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                  <dt className="text-gray-600">電話番号</dt>
+                  <dd className="md:col-span-3">{COMPANY_INFO.phone}</dd>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                   <dt className="text-gray-600">設立年</dt>
                   <dd className="md:col-span-3">{COMPANY_INFO.established}</dd>
                 </div>

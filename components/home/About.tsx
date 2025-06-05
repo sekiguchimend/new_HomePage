@@ -84,7 +84,7 @@ export default function About() {
     <section className="relative w-full py-20 md:py-28 overflow-hidden bg-gradient-to-br from-[#a8d0f0] via-[#ccd0f0] to-[#e7d0f2]">
       <div ref={ref} className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-          <motion.div 
+          <motion.div
             initial="hidden"
             animate={controls}
             variants={{
@@ -98,7 +98,7 @@ export default function About() {
             <p className="text-2xl font-medium mb-10">私たちについて</p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial="hidden"
             animate={controls}
             variants={{

@@ -260,53 +260,53 @@ export default async function BlogPostPage({ params }: Props) {
       />
       
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-        {/* パンくずナビ */}
+      {/* パンくずナビ */}
         <nav className="pt-32 pb-8 bg-gray-50" aria-label="パンくずナビゲーション">
-          <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4">
             <ol className="flex items-center space-x-2 text-sm text-gray-600" itemScope itemType="https://schema.org/BreadcrumbList">
               <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
                 <Link href="/" className="hover:text-blue-600" itemProp="item">
                   <span itemProp="name">ホーム</span>
-                </Link>
+            </Link>
                 <meta itemProp="position" content="1" />
               </li>
-              <span>/</span>
+            <span>/</span>
               <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
                 <Link href="/blog" className="hover:text-blue-600" itemProp="item">
                   <span itemProp="name">ブログ</span>
-                </Link>
+            </Link>
                 <meta itemProp="position" content="2" />
               </li>
-              <span>/</span>
+            <span>/</span>
               <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
                 <span className="text-gray-900" itemProp="name">{post.title}</span>
                 <meta itemProp="position" content="3" />
               </li>
             </ol>
-          </div>
-        </nav>
+        </div>
+      </nav>
 
         <article className="py-16 flex-1" itemScope itemType="https://schema.org/BlogPosting">
-          <div className="container mx-auto px-4 max-w-4xl">
-            {/* 記事ヘッダー */}
-            <header className="mb-12">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
-                  ブログ
-                </span>
+        <div className="container mx-auto px-4 max-w-4xl">
+          {/* 記事ヘッダー */}
+          <header className="mb-12">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
+                ブログ
+              </span>
                 <time 
                   className="text-sm text-gray-500" 
                   dateTime={post.publishedAt}
                   itemProp="datePublished"
                 >
-                  {new Date(post.publishedAt).toLocaleDateString('ja-JP')}
-                </time>
+                {new Date(post.publishedAt).toLocaleDateString('ja-JP')}
+              </time>
                 <meta itemProp="dateModified" content={post.updatedAt} />
-              </div>
-              
+            </div>
+            
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight" itemProp="headline">
-                {post.title}
-              </h1>
+              {post.title}
+            </h1>
               
               {/* 著者情報 */}
               <div className="mb-6" itemProp="author" itemScope itemType="https://schema.org/Organization">
@@ -314,34 +314,34 @@ export default async function BlogPostPage({ params }: Props) {
                 <span className="text-sm font-medium text-gray-900" itemProp="name">Queue株式会社</span>
                 <meta itemProp="url" content={baseUrl} />
               </div>
-              
-              {post.descriptions && (
-                <div 
-                  className="text-xl text-gray-600 mb-8 prose prose-lg max-w-none"
-                  dangerouslySetInnerHTML={{ __html: post.descriptions }}
+            
+            {post.descriptions && (
+              <div 
+                className="text-xl text-gray-600 mb-8 prose prose-lg max-w-none"
+                dangerouslySetInnerHTML={{ __html: post.descriptions }}
                   itemProp="description"
-                />
-              )}
-              
-              {post.eyecatch && (
+              />
+            )}
+            
+            {post.eyecatch && (
                 <figure className="aspect-video relative rounded-lg overflow-hidden mb-8" itemProp="image" itemScope itemType="https://schema.org/ImageObject">
-                  <Image
-                    src={post.eyecatch.url}
-                    alt={post.eyecatch.alt || post.title}
-                    fill
-                    className="object-cover"
+                <Image
+                  src={post.eyecatch.url}
+                  alt={post.eyecatch.alt || post.title}
+                  fill
+                  className="object-cover"
                     priority
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-                  />
+                />
                   <meta itemProp="url" content={post.eyecatch.url} />
                   <meta itemProp="width" content="1200" />
                   <meta itemProp="height" content="630" />
                 </figure>
-              )}
-            </header>
+            )}
+          </header>
 
-            {/* 記事本文 */}
-            <div 
+          {/* 記事本文 */}
+          <div 
               className="prose prose-lg max-w-none 
                 prose-headings:text-gray-900 prose-headings:font-bold prose-headings:leading-tight
                 prose-h1:text-4xl prose-h1:mb-6 prose-h1:mt-8
@@ -389,7 +389,7 @@ export default async function BlogPostPage({ params }: Props) {
                 [&_.align-center]:text-center
                 [&_.align-right]:text-right
                 [&_.align-left]:text-left"
-              dangerouslySetInnerHTML={{ __html: post.content }}
+            dangerouslySetInnerHTML={{ __html: post.content }}
               itemProp="articleBody"
             />
 
@@ -405,28 +405,28 @@ export default async function BlogPostPage({ params }: Props) {
               <meta itemProp="url" content={url} />
             </div>
 
-            {/* 記事フッター */}
+          {/* 記事フッター */}
             <footer className="mt-16 pt-8 border-t border-gray-200" style={{ marginBottom: '30px' }}>
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <Link
-                  href="/blog"
-                  className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              <Link
+                href="/blog"
+                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                <svg
+                  className="mr-2 w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  <svg
-                    className="mr-2 w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 19l-7-7 7-7"
-                    />
-                  </svg>
-                  ブログ一覧に戻る
-                </Link>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+                ブログ一覧に戻る
+              </Link>
                 
                 {/* 関連リンク */}
                 <div className="flex gap-2">
@@ -438,11 +438,11 @@ export default async function BlogPostPage({ params }: Props) {
                     お問い合わせ
                   </Link>
                 </div>
-              </div>
-            </footer>
-          </div>
-        </article>
-      </div>
+            </div>
+          </footer>
+        </div>
+      </article>
+    </div>
     </>
   );
 } 
