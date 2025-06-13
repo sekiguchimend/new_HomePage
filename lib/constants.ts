@@ -42,9 +42,9 @@ export const BUSINESS_SERVICES = [
   },
   {
     id: "02",
-    title: "https://d37q5cbvhvlc24.cloudfront.net/",
+    title: "workmate-script",
     description: "スクリプトタグを一行Webサイトに埋め込むだけで、AIチャットボットを簡単導入。あなたのホームページが「話せるように」なり、24時間体制で顧客対応が可能。複雑な設定は不要で、即座に運用開始できます。",
-    href: "",
+    href: "https://d37q5cbvhvlc24.cloudfront.net/",
   },
   {
     id: "03",
