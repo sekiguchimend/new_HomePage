@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { COMPANY_INFO, BUSINESS_SERVICES } from '@/lib/constants';
 import AnimatedGradientBackground from '@/components/shared/AnimatedGradientBackground';
+import Image from 'next/image';
 
 export default function CompanyPage() {
   const teamMembers = [
@@ -10,20 +11,15 @@ export default function CompanyPage() {
       name: "谷口 太一",
       position: "代表取締役CEO",
       age: "23歳",
-      description: "Queue株式会社を設立。"
+      description: "6歳のころからプログラミングを始め、圧倒的な技術力を持つ。ニュージーランドの大学の工学部を飛び級卒業。AI分野における豊富な経験を活かし、2024年に当社を創業。"
     },
     {
       name: "渡辺 ジェームス",
       position: "COO（最高執行責任者）",
       age: "24歳",
-      description: "会社の運営を担当。"
+      description: "ニュージーランドのハーフとして、多言語を操る圧倒的な行動力とグローバルな視点を持つ無敵営業マン。"
     },
-    {
-      name: "開発・運営チーム",
-      position: "業務委託メンバー",
-      teamSize: "8名（業務委託含む）",
-      description: "社員は0名で、業務委託メンバーによる開発・運営体制。"
-    }
+    
   ];
 
   return (
@@ -84,6 +80,14 @@ export default function CompanyPage() {
                     <p className="text-blue-700 text-sm mt-1 ml-4">
                       投資家からの信頼と支援のもと、AI技術の社会実装に向けた取り組みを強化しています。
                     </p>
+                    <a 
+                      href="https://prtimes.jp/main/html/rd/p/000000195.000008324.html" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-blue-600 hover:text-blue-800 text-sm mt-3 inline-block ml-4"
+                    >
+                      → 詳細記事はこちら
+                    </a>
                   </div>
                 </div>
               </div>
@@ -96,7 +100,19 @@ export default function CompanyPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-sm mb-8"
             >
-              <h2 className="text-2xl font-bold mb-6 text-gray-800">チーム</h2>
+              
+              <div className="mb-8 flex justify-center">
+                <div className="w-full max-w-lg rounded-lg overflow-hidden shadow-md border border-gray-200/50">
+                  <Image
+                    src="/zen.png"
+                    alt="Queue チームメンバー"
+                    width={800}
+                    height={450}
+                    className="w-full object-cover"
+                  />
+                </div>
+              </div>
+
               <div className="space-y-6">
                 {teamMembers.map((member, index) => (
                   <div key={index} className="border-b border-gray-200 last:border-b-0 pb-6 last:pb-0">
@@ -105,9 +121,7 @@ export default function CompanyPage() {
                       {member.age && (
                         <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded">{member.age}</span>
                       )}
-                      {member.teamSize && (
-                        <span className="text-sm text-gray-500 bg-blue-100 px-2 py-1 rounded">{member.teamSize}</span>
-                      )}
+                     
                     </div>
                     <h4 className="text-md text-blue-600 font-medium mb-3">{member.position}</h4>
                     <p className="text-gray-600 mb-2">{member.description}</p>

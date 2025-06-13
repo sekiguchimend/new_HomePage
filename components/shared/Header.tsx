@@ -115,7 +115,7 @@ export default function Header() {
             whileHover="hover"
             whileTap="tap"
           >
-            <div className="relative w-10 h-10">
+            <div className="relative w-12 h-12">
               <Image
                 src="/Queue.png"
                 alt="Queue"
@@ -125,7 +125,7 @@ export default function Header() {
               />
             </div>
             <motion.span 
-              className="text-xl font-bold text-gray-900"
+              className="text-2xl font-bold text-gray-900"
               animate={{
                 textShadow: isScrolled 
                   ? "0 0 20px rgba(59, 130, 246, 0.3)"
