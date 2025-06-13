@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { COMPANY_INFO, BUSINESS_SERVICES } from '@/lib/constants';
 import AnimatedGradientBackground from '@/components/shared/AnimatedGradientBackground';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function CompanyPage() {
   const teamMembers = [
@@ -11,15 +12,20 @@ export default function CompanyPage() {
       name: "谷口 太一",
       position: "代表取締役CEO",
       age: "23歳",
-      description: "6歳のころからプログラミングを始め、圧倒的な技術力を持つ。ニュージーランドの大学の工学部を飛び級卒業。AI分野における豊富な経験を活かし、2024年に当社を創業。"
+      description: "6歳の頃からプログラミングを始め、圧倒的な技術力を持つ。\n特にAI領域では独自のモデルを構築し、それを基盤とした自社プロダクトを複数開発しております。\nニュージーランドのヴィクトリア大学の工学部を飛び級卒業。AI分野における豊富な経験を活かし、2024年に当社を創業。"
     },
     {
       name: "渡辺 ジェームス",
       position: "COO（最高執行責任者）",
       age: "24歳",
-      description: "ニュージーランドのハーフとして、多言語を操る圧倒的な行動力とグローバルな視点を持つ無敵営業マン。"
+      description: "ニュージーランドと日本のハーフとして、\n多言語を自在に操り、行動力とグローバルな視野を兼ね備えた'無敵の営業マン'。\nニュージーランド・ヴィクトリア大学では工学部と生物学部の両学位を取得。"
     },
-    
+    {
+      name: "開発・運営チーム",
+      position: "業務委託メンバー",
+      teamSize: "8名（業務委託含む）",
+      description: "社員は0名で、業務委託メンバーによる開発・運営体制。"
+    }
   ];
 
   return (
@@ -143,7 +149,9 @@ export default function CompanyPage() {
                   <div key={service.id} className="bg-gray-50 p-6 rounded-lg">
                     <div className="flex items-center mb-3">
                       <span className="text-blue-600 font-bold text-lg mr-3">{service.id}</span>
-                      <h3 className="text-lg font-semibold text-gray-800">{service.title}</h3>
+                      <Link href={service.href || "#"}>
+                        <h3 className="text-lg font-semibold text-gray-800 hover:text-blue-600 transition-colors">{service.title}</h3>
+                      </Link>
                     </div>
                     <p className="text-gray-600 text-sm leading-relaxed mb-3">{service.description}</p>
                     <div className="text-xs text-gray-500">

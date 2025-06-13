@@ -38,21 +38,25 @@ export const BUSINESS_SERVICES = [
     id: "01",
     title: "Workmate",
     description: "社内の「わからない」をゼロにする、社内向けAIチャットボット。SlackやWebに即導入できます。マニュアル・PDF・議事録など、社内の情報を学習し、あらゆる質問に24時間対応。社内情報の属人化を解決し、業務効率を大幅に向上させます。",
+    href: "https://www.workmate-ai.com/",
   },
   {
     id: "02",
-    title: "Workmate-Script",
+    title: "https://d37q5cbvhvlc24.cloudfront.net/",
     description: "スクリプトタグを一行Webサイトに埋め込むだけで、AIチャットボットを簡単導入。あなたのホームページが「話せるように」なり、24時間体制で顧客対応が可能。複雑な設定は不要で、即座に運用開始できます。",
+    href: "",
   },
   {
     id: "03",
     title: "Prompty",
     description: "プロンプトが売れる、買える、プロンプト売買プラットフォーム。ChatGPTやGeminiで使える「再現性の高いプロンプト」を売買・共有できる国内初のマーケットプレイス。あなたのノウハウが収益に変わります。",
+    href: "https://prompty-ai.com/",
   },
   {
     id: "04",
     title: "AI受託開発",
     description: "企業様のビジネス課題に合わせたAIソリューションの受託開発。生成AI・チャットボット・業務自動化システムなど、お客様のニーズに応じたカスタムAI開発を提供します。",
+    href: "#",
   },
 ];
 
