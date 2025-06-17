@@ -63,7 +63,7 @@ export const metadata: Metadata = {
         url: `${baseUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: 'Queue株式会社 - プロンプトの経済圏をつくる',
+        alt: 'Queue株式会社',
       },
     ],
   },
@@ -113,7 +113,7 @@ export default function RootLayout({
     name: 'Queue株式会社',
     url: baseUrl,
     logo: `${baseUrl}/logo.png`,
-    description: 'プロンプトの経済圏をつくる。生成AIとオートメーションを軸としたSaaSプロダクトを提供する東京・銀座発のテックカンパニー。',
+    description: 'Queue株式会社は生成AIとオートメーションを軸としたSaaSプロダクトを提供する東京・銀座発のテックカンパニーです。',
     foundingDate: '2024-04-01',
     address: {
       '@type': 'PostalAddress',
@@ -182,7 +182,7 @@ export default function RootLayout({
     '@type': 'WebSite',
     name: 'Queue株式会社',
     url: baseUrl,
-    description: 'プロンプトの経済圏をつくる。世界を熱狂させる、AIプロダクトをつくる。',
+    description: 'Queue株式会社は、AIとオートメーション技術でビジネスを進化させるテックカンパニーです。',
     publisher: {
       '@type': 'Organization',
       name: 'Queue株式会社',
