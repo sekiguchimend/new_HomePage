@@ -10,12 +10,12 @@ import { Metadata } from 'next';
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://queue.co.jp';
 
 export const metadata: Metadata = {
-  title: 'Queue株式会社 | プロンプトの経済圏をつくる',
-  description: 'プロンプトの経済圏をつくる。プロンプトマーケット「Prompty」、社内AIチャット「Workmate」。Queueは、ビジネスを進化させるAIテクノロジーの力をすべての企業へ届けます。',
-  keywords: 'AI, 生成AI, プロンプト, Workmate, Prompty, Queue株式会社, AIチャットボット, DX, オートメーション',
+  title: 'Queue株式会社',
+  description: '世界を動かすプロダクトを生み出すテックカンパニー',
+  keywords: 'Queue株式会社, AI, 生成AI, オートメーション, DX, SaaS, Workmate, Prompty, AIチャットボット, 業務効率化, テックカンパニー, 東京, 銀座',
   openGraph: {
-    title: 'Queue株式会社 | プロンプトの経済圏をつくる',
-    description: 'プロンプトの経済圏をつくる。プロンプトマーケット「Prompty」、社内AIチャット「Workmate」。',
+    title: 'Queue株式会社',
+    description: '世界を動かすプロダクトを生み出すテックカンパニー',
     url: baseUrl,
     type: 'website',
     images: [
@@ -23,14 +23,14 @@ export const metadata: Metadata = {
         url: `${baseUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: 'Queue株式会社 - プロンプトの経済圏をつくる',
+        alt: 'Queue株式会社',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Queue株式会社 | プロンプトの経済圏をつくる',
-    description: 'プロンプトの経済圏をつくる。プロンプトマーケット「Prompty」、社内AIチャット「Workmate」。',
+    title: 'Queue株式会社',
+    description: '世界を動かすプロダクトを生み出すテックカンパニー',
     images: [`${baseUrl}/og-image.jpg`],
   },
   alternates: {

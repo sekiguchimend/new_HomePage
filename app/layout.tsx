@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     default: 'Queue株式会社',
     template: '%s | Queue株式会社',
   },
-  description: 'Queue株式会社は、AIとオートメーション技術でビジネスを進化させる東京・銀座発のテックカンパニーです。AIチャットボット「Workmate」、プロンプトマーケットプレイス「Prompty」などのSaaSプロダクトを開発・提供しています。',
+  description: '世界を動かすプロダクトを生み出すテックカンパニー',
   keywords: [
     'Queue株式会社',
     'AI',
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     locale: 'ja_JP',
     url: baseUrl,
     title: 'Queue株式会社',
-    description: 'Queue株式会社は、AIとオートメーション技術でビジネスを進化させる東京・銀座発のテックカンパニーです。',
+    description: '世界を動かすプロダクトを生み出すテックカンパニー',
     siteName: 'Queue株式会社',
     images: [
       {
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Queue株式会社',
-    description: 'AIとオートメーションでビジネスを進化させるテックカンパニー。',
+    description: '世界を動かすプロダクトを生み出すテックカンパニー',
     site: '@queue_corp',
     creator: '@queue_corp',
     images: [`${baseUrl}/og-image.jpg`],
@@ -113,7 +113,7 @@ export default function RootLayout({
     name: 'Queue株式会社',
     url: baseUrl,
     logo: `${baseUrl}/logo.png`,
-    description: 'Queue株式会社は生成AIとオートメーションを軸としたSaaSプロダクトを提供する東京・銀座発のテックカンパニーです。',
+    description: '世界を動かすプロダクトを生み出すテックカンパニー',
     foundingDate: '2024-04-01',
     address: {
       '@type': 'PostalAddress',
@@ -182,7 +182,7 @@ export default function RootLayout({
     '@type': 'WebSite',
     name: 'Queue株式会社',
     url: baseUrl,
-    description: 'Queue株式会社は、AIとオートメーション技術でビジネスを進化させるテックカンパニーです。',
+    description: '世界を動かすプロダクトを生み出すテックカンパニー',
     publisher: {
       '@type': 'Organization',
       name: 'Queue株式会社',
